@@ -88,6 +88,16 @@ if(isset($_POST['form1'])) {
 							<div class="col-sm-4">
 								<select name="mcat_id" class="form-control select2 mid-cat">
 									<option value="">Select Mid Level Category</option>
+									<?php
+									$statement = $pdo->prepare("SELECT * FROM tbl_mid_category ORDER BY mcat_name ASC");
+									$statement->execute();
+									$result = $statement->fetchAll(PDO::FETCH_ASSOC);	
+									foreach ($result as $row) {
+										?>
+										<option value="<?php echo $row['mcat_id']; ?>"><?php echo $row['mcat_name']; ?></option>
+										<?php
+									}
+									?>
 								</select>
 							</div>
 						</div>

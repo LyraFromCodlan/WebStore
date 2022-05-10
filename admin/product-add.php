@@ -187,7 +187,7 @@ if(isset($_POST['form1'])) {
 			</div>
 			<?php endif; ?>
 
-			<form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
+			<form class="form-horizontal" action="" method="post" enctype="multipart/form-data" style="overflow-y: scroll; height:400px;">
 
 			<div class="form-group"> 
 
@@ -216,6 +216,16 @@ if(isset($_POST['form1'])) {
 							<div class="col-sm-4">
 								<select name="mcat_id" class="form-control select2 mid-cat">
 									<option value="">Select Mid Level Category</option>
+									<?php
+									$statement = $pdo->prepare("SELECT * FROM tbl_mid_category ORDER BY mcat_name ASC");
+									$statement->execute();
+									$result = $statement->fetchAll(PDO::FETCH_ASSOC);	
+									foreach ($result as $row) {
+										?>
+										<option value="<?php echo $row['mcat_id']; ?>"><?php echo $row['mcat_name']; ?></option>
+										<?php
+									}
+									?>
 								</select>
 							</div>
 						</div>
@@ -224,6 +234,16 @@ if(isset($_POST['form1'])) {
 							<div class="col-sm-4">
 								<select name="ecat_id" class="form-control select2 end-cat">
 									<option value="">Select End Level Category</option>
+									<?php
+									$statement = $pdo->prepare("SELECT * FROM tbl_end_category ORDER BY ecat_name ASC");
+									$statement->execute();
+									$result = $statement->fetchAll(PDO::FETCH_ASSOC);	
+									foreach ($result as $row) {
+										?>
+										<option value="<?php echo $row['ecat_id']; ?>"><?php echo $row['ecat_name']; ?></option>
+										<?php
+									}
+									?>
 								</select>
 							</div>
 						</div>
@@ -249,23 +269,6 @@ if(isset($_POST['form1'])) {
 							<label for="" class="col-sm-3 control-label">Quantity <span>*</span></label>
 							<div class="col-sm-4">
 								<input type="text" name="p_qty" class="form-control">
-							</div>
-						</div>
-						<div class="form-group">
-							<label for="" class="col-sm-3 control-label">Select Size</label>
-							<div class="col-sm-4">
-								<select name="size[]" class="form-control select2" multiple="multiple">
-									<?php
-									$statement = $pdo->prepare("SELECT * FROM tbl_size ORDER BY size_id ASC");
-									$statement->execute();
-									$result = $statement->fetchAll(PDO::FETCH_ASSOC);			
-									foreach ($result as $row) {
-										?>
-										<option value="<?php echo $row['size_id']; ?>"><?php echo $row['size_name']; ?></option>
-										<?php
-									}
-									?>
-								</select>
 							</div>
 						</div>
 						<div class="form-group">
@@ -366,6 +369,7 @@ if(isset($_POST['form1'])) {
 							</div>
 						</div>
 					</div>
+					
 				</div>
 
 			</form>

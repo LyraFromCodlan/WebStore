@@ -269,7 +269,7 @@ foreach ($result as $row) {
 	<div class="container">
 		<div class="row inner">
 			<div class="col-md-4 logo">
-				<a href="index.php"><img src="assets/uploads/<?php echo $logo; ?>" alt="logo image"></a>
+				<a href="index.php"><img src="assets/uploads/logo.jpg" alt="logo image"></a>
 			</div>
 			
 			<div class="col-md-5 right">
@@ -280,6 +280,7 @@ foreach ($result as $row) {
 						?>
 						<li><i class="fa fa-user"></i> <?php echo LANG_VALUE_13; ?> <?php echo $_SESSION['customer']['cust_name']; ?></li>
 						<li><a href="dashboard.php"><i class="fa fa-home"></i> <?php echo LANG_VALUE_89; ?></a></li>
+						<li><a href="logout.php">Logout</a></li>
 						<?php
 					} else {
 						?>

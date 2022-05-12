@@ -137,11 +137,11 @@ if(!isset($_SESSION['user'])) {
                     </li>
 
 
-                     <li class="treeview <?php if( ($cur_page == 'slider.php') ) {echo 'active';} ?>">
+                     <!-- <li class="treeview <?php if( ($cur_page == 'slider.php') ) {echo 'active';} ?>">
 			          <a href="slider.php">
 			            <i class="fa fa-hand-o-right"></i> <span>Слайдер</span>
 			          </a>
-			        </li>
+			        </li> -->
                     <!-- Icons to be displayed on Shop -->
 			        <li class="treeview <?php if( ($cur_page == 'service.php') ) {echo 'active';} ?>">
 			          <a href="service.php">

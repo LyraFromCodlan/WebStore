@@ -670,7 +670,7 @@ CREATE TABLE `tbl_mid_category` (
 
 INSERT INTO `tbl_mid_category` (`mcat_id`, `mcat_name`, `tcat_id`) VALUES
 (1, 'Men Accessories', 1),
-(2, 'Men\'s Shoes', 1),
+(2, 'Mens Shoes', 1),
 (3, 'Beauty Products', 2),
 (4, 'Accessories', 2),
 (6, 'Shoes', 2),

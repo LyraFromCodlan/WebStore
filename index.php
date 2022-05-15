@@ -104,7 +104,6 @@ foreach ($result as $row)
                     ?>
                     <div class="col-md-4">
                         <div class="item">
-                            <div class="photo"><img src="assets/uploads/<?php echo $row['photo']; ?>" alt="<?php echo $row['title']; ?>"></div>
                             <h3><?php echo $row['title']; ?></h3>
                             <p>
                                 <?php echo nl2br($row['content']); ?>

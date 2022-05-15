@@ -1240,6 +1240,34 @@ CREATE TABLE `tbl_shipping_cost_all` (
 
 -- --------------------------------------------------------
 
+
+
+--
+-- Table structure for table `tbl_slider`
+--
+
+CREATE TABLE `tbl_slider` (
+  `id` int(11) NOT NULL,
+  `photo` varchar(255) NOT NULL,
+  `heading` varchar(255) NOT NULL,
+  `content` text NOT NULL,
+  `button_text` varchar(255) NOT NULL,
+  `button_url` varchar(255) NOT NULL,
+  `position` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_slider`
+--
+
+INSERT INTO `tbl_slider` (`id`, `photo`, `heading`, `content`, `button_text`, `button_url`, `position`) VALUES
+(1, 'slider-1.jpg', 'Добро пожаловать на YOLOph.com', 'Покупаёте у нас последние обновления в мире мобильной связи', 'Показать товары', 'http://localhost/proj_shop/WebStore/product-category.php?id=1&type=mid-category', 'Center'),
+(2, 'slider-2.jpg', '50% скидка на все товары', 'Только сегодня и только сейчас скидки 50% на всю продукцию по промокоду', 'Больше', '#', 'Center'),
+(3, 'slider-3.jpg', '24 часовая поддержка', 'Вы можете написать нашей команде в любое время. Контакты в разделе "Свяжиетсь с нами"', 'Больше', '#', 'Right');
+
+-- --------------------------------------------------------
+
+
 --
 -- Table structure for table `tbl_social`
 --
